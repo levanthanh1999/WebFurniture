@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store - Home Page</title>
+    <link rel="stylesheet" href="./asset/product.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="nav">
+        <ul class="links-container">
+            <li class="link-item"><a href="http://127.0.0.1:5500/website_ecomerce/index.html" class="link active">home</a></li>
+            <li class="link-item"><a href="http://127.0.0.1:5500/website_ecomerce/product.html" class="link">product</a></li>
+            <li class="link-item"><a href="http://127.0.0.1:5500/website_ecomerce/search.html" class="link">search</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <i class="fa-solid fa-user user-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- product detail  -->
+    <section class="product-section">
+        <img src="./asset/img/img/product-image.png" class="product-image" alt="">
+        <div class="product-detail">
+            <h1 class="product-title">premium sofa</h1>
+            <p class="product-des">Light tones light your room luxurious and noble</p>
+            <div class="ratings">
+                <img src="./asset/img/img/fill star.png" class="start" alt="">
+                <img src="./asset/img/img/fill star.png" class="start" alt="">
+                <img src="./asset/img/img/fill star.png" class="start" alt="">
+                <img src="./asset/img/img/fill star.png" class="start" alt="">
+                <img src="./asset/img/img/no fill star.png" class="start" alt="">
+                <span class="rating-count">4,023 reviews</span>
+            </div>
+            <p class="price">$499</p>
+            <div class="btn-container">
+                <button class="product-btn buy-btn">buy now</button>
+                <button class="product-btn cart-btn">add to card</button>
+            </div>
+        </div>
+    </section>
+    
+     <!-- review section -->
+     <section class="review-section">
+        <h1 class="section-title">Reviews</h1>
+        <div class="review-container">
+            <div class="review-card">
+                <div class="user-dp" data-rating="'4.7"><img src="./asset/img/img/user 1.png" alt=""></div>
+                <h2 class="review-title">best quality more than my expectation</h2>
+                <p class="review">I am really satisfied with the product and its quality. Deserves 4.7 stars.</p>
+            </div>
+            <div class="review-card">
+                <div class="user-dp" data-rating="'5"><img src="./asset/img/img/user 2.png" alt=""></div>
+                <h2 class="review-title">on time delivery with best packaging</h2>
+                <p class="review">Fast, beautiful, quality. That's what I've seen when using the product here. Deserves 5 stars.</p>
+            </div>
+            <div class="review-card">
+                <div class="user-dp" data-rating="'4"><img src="./asset/img/img/user 3.png" alt=""></div>
+                <h2 class="review-title">very helpful customer support</h2>
+                <p class="review">Product quality is quite good, next time I will recommend to everyone. I rated 4 stars.</p>
+            </div>
+            <div class="review-card">
+                <div class="user-dp" data-rating="'4.9"><img src="./asset/img/img/user 4.png" alt=""></div>
+                <h2 class="review-title">very easy to refund/return products</h2>
+                <p class="review">Very good product, next time I will continue to buy it. 4.9 star rating for the shop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- add  review section  -->
+    <section class="add-review-section">
+        <h1 class="section-title">
+            add a review    
+        </h1>
+        <input type="text" class="review-headline" placeholder="review headline">
+        <textarea placeholder="review" class="review-field"></textarea>
+        <p class="rating-text">how much you liked the product</p>
+        <div class="star-container">
+            <img src="./asset/img/img/no fill star.png" alt="">
+            <img src="./asset/img/img/no fill star.png" alt="">
+            <img src="./asset/img/img/no fill star.png" alt="">
+            <img src="./asset/img/img/no fill star.png" alt="">
+            <img src="./asset/img/img/no fill star.png" alt="">
+        </div>
+        <button class="add-review-btn">add review</button>
+    </section>
+
+    <!-- similar products -->
+    <section class="best-selling-product-section">
+        <h1 class="section-title"> similar product</h1>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="./asset/img/img/product-1.png" alt="" class="product-img">
+                <p class="product-name">light</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/product-2.png" alt="" class="product-img">
+                <p class="product-name">chain</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/product-3.png" alt="" class="product-img">
+                <p class="product-name">store space</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/product-4.png" alt="" class="product-img">
+                <p class="product-name">sofa</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>made by modern web</footer>
+
+    <script src="./product.js"></script>
+</body>
+</html>

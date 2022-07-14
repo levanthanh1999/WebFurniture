@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store - Home Page</title>
+    <link rel="stylesheet" href="./asset/search.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="nav">
+        <ul class="links-container">
+            <li class="link-item"><a href="http://127.0.0.1:5500/website_ecomerce/index.html" class="link active">home</a></li>
+            <li class="link-item"><a href="http://127.0.0.1:5500/website_ecomerce/product.html" class="link">product</a></li>
+            <li class="link-item"><a href="http://127.0.0.1:5500/website_ecomerce/search.html" class="link">search</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <i class="fa-solid fa-user user-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Slider Ranger  -->
+    <div class="range-container">
+        <input type="range" id="range" min="0" max="1000">
+        <label for="range">500</label>
+    </div>
+
+    <!-- Best selling products -->
+    <section class="search-listing">
+        <h1 class="section-title"> sofas </h1>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-1.png" alt="" class="product-img">
+                <p  class="product-price">499</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-2.png" alt="" class="product-img">
+                <p  class="product-price">350</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-3.png" alt="" class="product-img">
+                <p  class="product-price">500</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-4.png" alt="" class="product-img">
+                <p  class="product-price">200</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-5.png" alt="" class="product-img">
+                <p  class="product-price">250</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-6.png" alt="" class="product-img">
+                <p  class="product-price">350</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-7.png" alt="" class="product-img">
+                <p  class="product-price">750</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-8.png" alt="" class="product-img">
+                <p  class="product-price">180</p>
+            </div>
+            <div class="product-card">
+                <img src="./asset/img/img/sofa-9.png" alt="" class="product-img">
+                <p  class="product-price">460</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        const productPrice = document.getElementsByClassName('product-price')
+        for (var i = 0; i < productPrice.length; i++) {
+            // if (value == productPrice[i]){
+            //     return 
+            // }
+        }
+        
+        const range = document.getElementById('range')
+
+        range.addEventListener('input', (e) => {
+            const value = +e.target.value
+            const label = e.target.nextElementSibling
+
+            const range_width = getComputedStyle(e.target).getPropertyValue('width')
+            const label_width = getComputedStyle(label).getPropertyValue('width')
+
+            const num_width = +range_width.substring(0, range_width.length - 2)
+            const num_label_width = +label_width.substring(0, label_width.length - 2)
+
+            const max = +e.target.max
+            const min = +e.target.min
+
+            const left = value * (num_width / max) - num_label_width / 2 + scale(value, min, max, 10, -10)
+
+            label.innerHTML = value
+        
+})
+        
+        const scale = (num, in_min, in_max, out_min, out_max) => {
+            return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+        }
+
+    </script>
+</body>
+</html>
