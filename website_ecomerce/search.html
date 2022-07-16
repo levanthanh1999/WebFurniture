@@ -36,8 +36,27 @@
         <label for="range">500</label>
     </div>
 
+    <!-- Product List  -->
+    <div class="productList">
+        <h2>sofas</h2>
+
+        <input type="text" id="myInput" placeholder="Search for City.." title="Type in a name of City">
+
+        <ul id="myUL" class="product-card">
+          <li><a href="#">SF1   <img src="./asset/img/img/sofa-1.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF2   <img src="./asset/img/img/sofa-2.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF3   <img src="./asset/img/img/sofa-3.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF4   <img src="./asset/img/img/sofa-4.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF5   <img src="./asset/img/img/sofa-5.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF6   <img src="./asset/img/img/sofa-6.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF7   <img src="./asset/img/img/sofa-7.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF8   <img src="./asset/img/img/sofa-8.png" alt="" class="product-img"></a></li>
+          <li><a href="#">SF9   <img src="./asset/img/img/sofa-9.png" alt="" class="product-img"></a></li>
+        </ul>
+      </div>
+
     <!-- Best selling products -->
-    <section class="search-listing">
+    <!-- <section class="search-listing">
         <h1 class="section-title"> sofas </h1>
         <div class="product-container">
             <div class="product-card">
@@ -76,17 +95,51 @@
                 <img src="./asset/img/img/sofa-9.png" alt="" class="product-img">
                 <p  class="product-price">460</p>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <script>
 
-        const productPrice = document.getElementsByClassName('product-price')
-        for (var i = 0; i < productPrice.length; i++) {
-            // if (value == productPrice[i]){
-            //     return 
-            // }
-        }
+        //JS Filter
+         // lấy thẻ input
+            var input = document.getElementById("myInput");
+            // định nghĩa hàm xử lý myFunction
+            function myFunction() {
+                var filter, ul, li, a, i;
+                // lấy giá trị người dùng nhập
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                // Nếu filter không có giá trị thị ẩn phần kết quare\
+                if (!filter) {
+                ul.style.display = "none";
+                }else{
+                // lặp qua tất cả các thẻ li chứa kết quả
+                for (i = 0; i < li.length; i++) {
+                    // lấy thẻ a trong các thẻ li
+                    a = li[i].getElementsByTagName("a")[0];
+                    // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        //nếu có hiển thị phàn tử ul và các thẻ li đó
+                        ul.style.display = "block";
+                        li[i].style.display = "";
+                    } else {
+                        // nếu không ẩn các thẻ li
+                        li[i].style.display = "none";
+
+                    }
+                }
+                }
+            }
+            //gán sự kiện cho thẻ input
+            input.addEventListener("keyup", myFunction);
+
+                const productPrice = document.getElementsByClassName('product-price')
+                for (var i = 0; i < productPrice.length; i++) {
+                    // if (value == productPrice[i]){
+                    //     return 
+                    // }
+                }
         
         const range = document.getElementById('range')
 
